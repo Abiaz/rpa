@@ -212,7 +212,7 @@ def wait_and_click(image_paths, confidence=0.8, max_wait=None, sleep=1, scale=No
     if len(positions):
         point = pyautogui.center(positions[0])
 
-        pyautogui.moveTo(point.x, point.y)
+        pyautogui.move(point.x, point.y)
         pyautogui.click(point.x, point.y)
 
         logger.debug("Point clicked %s", point)

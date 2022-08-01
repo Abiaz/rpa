@@ -60,6 +60,8 @@ def server_44():
 
         rpa.restore_queue('start_loop')
 
+    time.sleep(10)
+
 def server_51():
     """
     ----------------------------------------------------------------------
@@ -126,7 +128,7 @@ def chest():
     rpa.wait_and_click(['btn_chest2.png', 'btn_chest3.png'])
 
     if rpa.end_of_queue_state():
-        rpa.wait_and_click(['btn_chest_open.png'], max_wait=5)
+        rpa.wait_and_click(['btn_chest_open.png','btn_chest_open_german.png'], max_wait=5)
 
     rpa.press('esc', presses=5, interval=0.5)
 
