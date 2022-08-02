@@ -60,8 +60,7 @@ def server_44():
 
         rpa.restore_queue('start_loop')
 
-    time.sleep(10)
-
+   
 def server_51():
     """
     ----------------------------------------------------------------------
