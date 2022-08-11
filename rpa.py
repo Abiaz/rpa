@@ -36,7 +36,7 @@ def first_screen():
     """
     rpa.wait_and_click(['logo_nexters.png'], max_wait=20)  # check for loading screen and ads
 
-    rpa.press('esc', presses=3)  # exit promotion screen
+    rpa.press('esc', presses=5, interval= 0.5)  # exit promotion screen
 
 def server_44():
     """
@@ -60,7 +60,7 @@ def server_44():
 
         rpa.restore_queue('start_loop')
 
-    time.sleep(10)
+    
 
 def server_51():
     """
@@ -194,7 +194,7 @@ def arena():
     rpa.save_queue('start_loop')
 
     while rpa.end_of_queue_state():
-        rpa.wait_and_click(['btn_kattegat.png','btn_kattegat2.png','btn_arena_skoll.png'])
+        rpa.wait_and_click(['btn_kattegat.png','btn_kattegat2.png','btn_arena_skoll.png','btn_libertalia.png','btn_nullplan.png'])
 
         if rpa.end_of_queue_state():
             rpa.press('esc')
@@ -226,7 +226,7 @@ def arena2():
     rpa.save_queue('start_loop')
 
     while rpa.end_of_queue_state():
-        rpa.wait_and_click(['btn_kattegat.png','btn_kattegat2.png','btn_arena_skoll.png'])
+        rpa.wait_and_click(['btn_kattegat.png','btn_kattegat2.png','btn_arena_skoll.png','btn_libertalia.png','btn_nullplan.png'])
 
         if rpa.end_of_queue_state():
             rpa.press('esc')
@@ -261,7 +261,7 @@ def grand_arena():
     rpa.save_queue('start_loop')
 
     while rpa.end_of_queue_state():
-        rpa.wait_and_click(['btn_kattegat.png','btn_kattegat2.png','btn_arena_skoll.png'])
+        rpa.wait_and_click(['btn_kattegat.png','btn_kattegat2.png','btn_arena_skoll.png','btn_libertalia.png','btn_nullplan.png'])
 
         if rpa.end_of_queue_state():
             rpa.press('esc')
