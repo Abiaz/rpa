@@ -23,14 +23,18 @@ import argparse
 
 logger = logging.getLogger(__name__)
 
-def login():
+def logout():
 
-    from pyrpa.lib_users import load_users
     import webbrowser
     url = 'https://www.hero-wars.com'
     webbrowser.open_new(url)
-    driver = webdriver.Chrome()
     rpa.sleep(15)
+    rpa.wait_and_click(['btn_logout_menu.png'], confidence=0.7)
+
+    if rpa.end_of_queue_state():
+        rpa.wait_and_click(['btn_login_logout.png'])
+
+        rpa.sleep(10)
     
 
 def login_abiaz():
