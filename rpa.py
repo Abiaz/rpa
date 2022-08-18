@@ -20,8 +20,38 @@ from pyrpa.lib_secv import gen_checksum
 import os
 import argparse
 
+
 logger = logging.getLogger(__name__)
 
+def login():
+
+    from pyrpa.lib_users import load_users
+    import webbrowser
+    url = 'https://www.hero-wars.com'
+    webbrowser.open_new(url)
+    driver = webdriver.Chrome()
+    rpa.sleep(15)
+    
+
+def login_abiaz():
+
+    rpa.wait_and_click(['btn_login_menu.png'])
+
+    if rpa.end_of_queue_state():
+        rpa.wait_and_click(['btn_login_logout.png'])
+
+        rpa.sleep(10)
+       
+    
+        
+        #if rpa.end_of_queue_state():
+         #   rpa.wait_and_click(['btn_login_email.png'])
+
+          #  if rpa.end_of_queue_state():
+           #     rpa.wait_and_click(['btn_login_abiaz.png'])
+
+    if rpa.end_of_queue_state():
+        rpa.wait_and_click(['btn_login_play.png'])
 
 def first_screen():
     """

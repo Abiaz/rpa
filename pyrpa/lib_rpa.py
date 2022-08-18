@@ -18,6 +18,7 @@ import pyautogui
 pyautogui.FAILSAFE = False
 import imutils
 import time
+from selenium import webdriver
 
 
 logger = logging.getLogger(__name__)
@@ -340,8 +341,7 @@ class Robotic_Process_Automation():
 
     def restore_queue(self, label):
         restore_queue(label)
-
-
+    
 if __name__ == "__main__":
     """ setup logging capabilities """
     logging.basicConfig(
