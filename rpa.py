@@ -39,9 +39,9 @@ def logout():
 
 def login_abiaz():
 
-   rpa.wait_and_click(['btn_login_email.png'])
+    rpa.wait_and_click(['btn_login_email.png'])
 
-     if rpa.end_of_queue_state():
+    if rpa.end_of_queue_state():
          rpa.wait_and_click(['btn_login_abiaz.png'])
 
     if rpa.end_of_queue_state():
