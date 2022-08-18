@@ -42,30 +42,30 @@ def login_abiaz():
     rpa.wait_and_click(['btn_login_email.png'])
 
     if rpa.end_of_queue_state():
-         rpa.wait_and_click(['btn_login_abiaz.png'])
+        rpa.wait_and_click(['btn_login_abiaz.png'])
 
-    if rpa.end_of_queue_state():
-        rpa.wait_and_click(['btn_login_play.png'])
+        if rpa.end_of_queue_state():
+            rpa.wait_and_click(['btn_login_play.png'])
 
 def login_floki():
 
-   rpa.wait_and_click(['btn_login_email.png'])
-
-     if rpa.end_of_queue_state():
-         rpa.wait_and_click(['btn_login_floki.png'])
+    rpa.wait_and_click(['btn_login_email.png'])
 
     if rpa.end_of_queue_state():
-        rpa.wait_and_click(['btn_login_play.png'])
+        rpa.wait_and_click(['btn_login_floki.png'])
+
+        if rpa.end_of_queue_state():
+            rpa.wait_and_click(['btn_login_play.png'])
 
 def login_fearil():
 
-   rpa.wait_and_click(['btn_login_email.png'])
-
-     if rpa.end_of_queue_state():
-         rpa.wait_and_click(['btn_login_fearil.png'])
+    rpa.wait_and_click(['btn_login_email.png'])
 
     if rpa.end_of_queue_state():
-        rpa.wait_and_click(['btn_login_play.png'])
+        rpa.wait_and_click(['btn_login_fearil.png'])
+
+        if rpa.end_of_queue_state():
+            rpa.wait_and_click(['btn_login_play.png'])
 
 def first_screen():
     """
