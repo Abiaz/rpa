@@ -28,7 +28,7 @@ def open_game():
     import webbrowser
     url = 'https://www.hero-wars.com'
     webbrowser.open_new(url)
-    rpa.sleep(15)
+    rpa.sleep(15)    
 
 def logout():
 
@@ -42,23 +42,33 @@ def logout():
 
 def login_abiaz():
 
-    rpa.wait_and_click(['btn_login_menu.png'])
+    rpa.wait_and_click(['btn_login_email.png'])
 
     if rpa.end_of_queue_state():
-        rpa.wait_and_click(['btn_login_logout.png'])
+        rpa.wait_and_click(['btn_login_abiaz.png'])
 
-        rpa.sleep(10)
-       
-    
-        
-        #if rpa.end_of_queue_state():
-         #   rpa.wait_and_click(['btn_login_email.png'])
+        if rpa.end_of_queue_state():
+            rpa.wait_and_click(['btn_login_play.png'])
 
-          #  if rpa.end_of_queue_state():
-           #     rpa.wait_and_click(['btn_login_abiaz.png'])
+def login_floki():
+
+    rpa.wait_and_click(['btn_login_email.png'])
 
     if rpa.end_of_queue_state():
-        rpa.wait_and_click(['btn_login_play.png'])
+        rpa.wait_and_click(['btn_login_floki.png'])
+
+        if rpa.end_of_queue_state():
+            rpa.wait_and_click(['btn_login_play.png'])
+
+def login_fearil():
+
+    rpa.wait_and_click(['btn_login_email.png'])
+
+    if rpa.end_of_queue_state():
+        rpa.wait_and_click(['btn_login_fearil.png'])
+
+        if rpa.end_of_queue_state():
+            rpa.wait_and_click(['btn_login_play.png'])
 
 def first_screen():
     """
