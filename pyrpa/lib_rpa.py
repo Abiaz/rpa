@@ -18,7 +18,7 @@ import pyautogui
 pyautogui.FAILSAFE = False
 import imutils
 import time
-from selenium import webdriver
+
 
 
 logger = logging.getLogger(__name__)
