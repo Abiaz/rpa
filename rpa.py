@@ -23,6 +23,28 @@ import argparse
 
 logger = logging.getLogger(__name__)
 
+def heroic_mission():
+
+    rpa.wait_and_click (['btn_heroic_mission_campaign.png'])
+
+    rpa.save_queue('start_loop')
+
+    while rpa.end_of_queue_state():
+        rpa.wait_and_click(['btn_heroic_mission_left.png'])
+
+        if rpa.end_of_queue_state():
+            rpa.wait_and_click(['btn_heroic_mission_aurora.png'], max_wait=2)
+               
+    rpa.restore_queue('start_loop')
+
+    rpa.wait_and_click (['btn_heroic_mission_x3.png'])
+
+    rpa.press('esc', presses=5, interval= 0.5)
+
+    
+
+
+
 def open_game():
 
     import webbrowser
