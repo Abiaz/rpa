@@ -35,7 +35,7 @@ def heroic_mission():
         if rpa.end_of_queue_state():
             rpa.wait_and_click(['btn_heroic_mission_aurora.png'], max_wait=2)
                
-    rpa.restore_queue('start_loop')
+            rpa.restore_queue('start_loop')
 
     rpa.wait_and_click (['btn_heroic_mission_x3.png'])
 
