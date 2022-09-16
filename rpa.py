@@ -48,7 +48,7 @@ def heroic_mission():
 def open_game():
 
     import webbrowser
-    url = 'https://www.hero-wars.com'
+    url = 'https://www.hero-wars.com/?hl=en'
     webbrowser.open_new(url)
     rpa.sleep(15)    
 
