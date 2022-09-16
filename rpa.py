@@ -223,7 +223,7 @@ def airship():
     Step: get all airship tasks
     ----------------------------------------------------------------------
     """
-    rpa.wait_and_click(['btn_airship.png', 'btn_airship2.png'])
+    rpa.wait_and_click(['btn_airship.png', 'btn_airship2.png','btn_airship3.png'])
 
     if rpa.end_of_queue_state():
         rpa.wait_and_click(['gift_valkyrie.png'])
@@ -258,7 +258,7 @@ def arena():
     Step: 1st fight in arena
     ----------------------------------------------------------------------
     """
-    rpa.wait_and_click(['btn_arena.png'])
+    rpa.wait_and_click(['btn_arena.png', 'btn_arena2.png'])
 
     rpa.save_queue('start_loop')
 
