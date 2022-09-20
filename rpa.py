@@ -223,7 +223,7 @@ def airship():
     Step: get all airship tasks
     ----------------------------------------------------------------------
     """
-    rpa.wait_and_click(['btn_airship.png', 'btn_airship2.png','btn_airship3.png'])
+    rpa.wait_and_click(['btn_airship.png', 'btn_airship2.png','btn_airship3.png'],confidence=0.9)
 
     if rpa.end_of_queue_state():
         rpa.wait_and_click(['gift_valkyrie.png'])
@@ -647,6 +647,42 @@ def asgard():
     # after we finished all the steps
     rpa.press('esc', presses=3, interval=0.5)
 
+def asgard2():
+
+    rpa.wait_and_click(['btn_asgard.png'])
+
+    rpa.wait_and_click(['btn_asgard_guild_raid.png'])
+
+    rpa.save_queue('start_loop')
+
+    while rpa.end_of_queue_state():
+        rpa.wait_and_click(['btn_asgard_guild_raid_sk2.png', 'btn_asgard_guild_raid_sk3.png'])
+
+        while rpa.end_of_queue_state():
+            rpa.wait_and_click(['btn_asgard_guild_raid_start.png'])
+
+            while rpa.end_of_queue_state():
+                rpa.wait_and_click(['btn_asgard_guild_raid_next.png', 'btn_asgard_guild_raid_battle.png', 'btn_asgard_guild_raid_next2.png'])
+
+            rpa.save_queue('start_fights')
+
+            while rpa.end_of_queue_state():
+                # wait for auto battle button
+                rpa.wait_for_image(['btn_battle_auto.png'], max_wait=15)
+
+                if rpa.end_of_queue_state():
+                    rpa.press('esc', presses=1)
+
+                    rpa.wait_and_click(['btn_asgard_guild_raid_skip.png'])
+
+                    while rpa.end_of_queue_state():
+                        rpa.wait_and_click(['btn_asgard_guild_raid_ok.png','btn_asgard_guild_raid_next2.png'])
+
+                    rpa.restore_queue('start_fights')
+
+    rpa.restore_queue('start_loop')
+
+    rpa.press('esc', presses=3, interval=0.5)
 
 def switch_to_guild():
     """
