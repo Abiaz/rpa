@@ -104,7 +104,7 @@ def first_screen():
     # logger.info('image position %s', img_pos)
     """
     rpa.wait_and_click(['logo_nexters.png'], max_wait=20)  # check for loading screen and ads
-
+    rpa.sleep(20)
     rpa.press('esc', presses=5, interval= 0.5)  # exit promotion screen
 
 def server_44():
