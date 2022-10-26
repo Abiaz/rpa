@@ -75,7 +75,7 @@ def spooky():
                                 rpa.wait_and_click (['btn_spooky_auto.png'])
 
                                 if rpa.end_of_queue_state():
-                                    rpa.wait_and_click (['btn_spooky_pause.png'])
+                                    rpa.press('esc')
 
                                     if rpa.end_of_queue_state():
                                         rpa.wait_and_click (['btn_spooky_skip.png'])
