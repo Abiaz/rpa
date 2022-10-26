@@ -87,10 +87,6 @@ def spooky():
 
         rpa.press('esc', presses=5, interval= 0.5)
 
-        rpa.press ('f5')
-
-        rpa.sleep (20)
-
        
 
 def spooky_old():
