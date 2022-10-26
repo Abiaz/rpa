@@ -43,7 +43,7 @@ def heroic_mission():
 
     
 
-def spooky
+def spooky():
 
     rpa.wait_and_click (['btn_spooky_pumpkin.png'])
 
