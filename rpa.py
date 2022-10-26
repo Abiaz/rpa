@@ -62,11 +62,11 @@ def spooky():
                 rpa.wait_and_click (['btn_spooky_130.png'])
 
                 if rpa.end_of_queue_state():
-                    rpa.wait_and_click(['btn_spooky_albus.png'], max_wait=5)
+                    rpa.wait_and_click(['btn_spooky_albus.png']), max_wait=5)
                     rpa.wait_and_click(['btn_spooky_pet.png'])
 
                     if rpa.end_of_queue_state():
-                        rpa.wait_and_click(['btn_spooky_albus.png']
+                        rpa.wait_and_click(['btn_spooky_albus.png'])
 
                         if rpa.end_of_queue_state():
                             rpa.wait_and_click (['btn_spooky_battle.png'])
