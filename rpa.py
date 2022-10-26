@@ -45,6 +45,8 @@ def heroic_mission():
 
 def spooky():
 
+    rpa.press('esc', presses=5, interval= 0.5)
+
     rpa.wait_and_click (['btn_spooky_pumpkin.png'])
 
     if rpa.end_of_queue_state():
@@ -64,7 +66,7 @@ def spooky():
 
                         rpa.press('f5')
 
-                        rpa.sleep(10)
+                        rpa.sleep(15)
 
 def open_game():
 
