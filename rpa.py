@@ -49,6 +49,52 @@ def spooky():
 
     rpa.wait_and_click (['btn_spooky_pumpkin.png'])
 
+    
+    if rpa.end_of_queue_state():
+        rpa.wait_and_click (['btn_spooky_furnace.png'])
+
+        rpa.save_queue('start_loop')
+
+        while rpa.end_of_queue_state():
+            rpa.wait_and_click (['btn_spooky_enter.png'])
+
+            if rpa.end_of_queue_state():
+                rpa.wait_and_click (['btn_spooky_130.png'])
+
+                if rpa.end_of_queue_state():
+                    rpa.wait_and_click(['btn_spooky_albus.png'], max_wait=5)
+                    rpa.wait_and_click(['btn_spooky_pet.png'])
+
+                    if rpa.end_of_queue_state():
+                        rpa.wait_and_click(['btn_spooky_albus.png']
+
+                        if rpa.end_of_queue_state():
+                            rpa.wait_and_click (['btn_spooky_battle.png'])
+
+                            if rpa.end_of_queue_state():
+                                rpa.wait_and_click (['btn_spooky_auto.png'])
+
+                                if rpa.end_of_queue_state():
+                                    rpa.wait_and_click (['btn_spooky_pause.png'])
+
+                                    if rpa.end_of_queue_state():
+                                        rpa.wait_and_click (['btn_spooky_skip.png'])
+
+                                        if rpa.end_of_queue_state():
+                                            rpa.wait_and_click (['btn_spooky_ok.png'])
+                                                                 
+        rpa.restore_queue('start_loop')
+
+        rpa.press('esc', presses=5, interval= 0.5)
+
+       
+
+def spooky_old():
+
+    rpa.press('esc', presses=5, interval= 0.5)
+
+    rpa.wait_and_click (['btn_spooky_pumpkin.png'])
+
     if rpa.end_of_queue_state():
         rpa.wait_and_click (['btn_spooky_furnace.png'])
 
