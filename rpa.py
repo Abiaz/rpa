@@ -43,7 +43,28 @@ def heroic_mission():
 
     
 
+def spooky
 
+    rpa.wait_and_click (['btn_spooky_pumpkin.png'])
+
+    if rpa.end_of_queue_state():
+        rpa.wait_and_click (['btn_spooky_furnace.png'])
+
+        if rpa.end_of_queue_state():
+            rpa.wait_and_click (['btn_spooky_enter.png'])
+
+            if rpa.end_of_queue_state():
+                rpa.wait_and_click (['btn_spooky_130.png'])
+
+                if rpa.end_of_queue_state():
+                    rpa.wait_and_click (['btn_spooky_battle.png'])
+
+                    if rpa.end_of_queue_state():
+                        rpa.wait_and_click (['btn_spooky_auto.png'])
+
+                        rpa.press('f5')
+
+                        rpa.sleep(10)
 
 def open_game():
 
