@@ -82,10 +82,7 @@ def spooky():
 
                                         if rpa.end_of_queue_state():
                                             rpa.wait_and_click (['btn_spooky_ok.png'])
-
-                                            if rpa.end_of_queue_state():
-                                                rpa.wait_and_click (['btn_spooky_collect.png'])
-                                                                 
+                                                                                                             
         rpa.restore_queue('start_loop')
 
         rpa.press ('f5')
