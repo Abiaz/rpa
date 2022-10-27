@@ -512,7 +512,7 @@ def tower():
     ----------------------------------------------------------------------
     Step: get all tower chests (without emeralds)
     """
-    rpa.wait_and_click(['btn_tower.png'])
+    rpa.wait_and_click(['btn_tower.png','btn_tower2.png'])
 
     rpa.save_queue('start_loop')
 
