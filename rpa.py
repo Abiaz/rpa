@@ -256,7 +256,9 @@ def server_90():
                rpa.wait_and_click(['btn_server_90.png'], max_wait=1)
                rpa.wait_and_click(['btn_server_select.png'])
 
-        rpa.restore_queue('start_loop')       
+        rpa.restore_queue('start_loop')
+
+    rpa.press('esc', presses=5, interval=0.5)
 
 def daily_bonus():
     """
@@ -365,7 +367,7 @@ def arena():
             if rpa.end_of_queue_state():
                 rpa.wait_and_click(['btn_arena_skip_battle.png'])
             
-    rpa.press('esc', presses=3, interval=0.5)
+    rpa.press('esc', presses=5, interval=0.5)
 
 def arena2():
     """
@@ -397,7 +399,7 @@ def arena2():
             if rpa.end_of_queue_state():
                 rpa.wait_and_click(['btn_arena_skip_battle.png'])
             
-    rpa.press('esc', presses=3, interval=0.5)
+    rpa.press('esc', presses=5, interval=0.5)
 
 def grand_arena():
     """
@@ -441,7 +443,7 @@ def grand_arena():
                      if rpa.end_of_queue_state():
                          rpa.wait_and_click(['btn_grand_arena_skip.png'])
 
-    rpa.press('esc', presses=3, interval=0.5)
+    rpa.press('esc', presses=5, interval=0.5)
        
 def send_presents():
     """
@@ -459,7 +461,7 @@ def send_presents():
 
             rpa.press('esc', presses=1)
 
-        rpa.press('esc', presses=3, interval=0.5)
+        rpa.press('esc', presses=5, interval=0.5)
 
 
 def outland():
