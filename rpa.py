@@ -85,6 +85,10 @@ def spooky():
                                                                  
         rpa.restore_queue('start_loop')
 
+        rpa.press ('f5')
+
+        rpa.sleep (20)
+
         rpa.press('esc', presses=5, interval= 0.5)
 
        
