@@ -92,32 +92,6 @@ def spooky():
         rpa.press('esc', presses=5, interval= 0.5)
 
        
-
-def spooky_old():
-
-    rpa.press('esc', presses=5, interval= 0.5)
-
-    rpa.wait_and_click (['btn_spooky_pumpkin.png'])
-
-    if rpa.end_of_queue_state():
-        rpa.wait_and_click (['btn_spooky_furnace.png'])
-
-        if rpa.end_of_queue_state():
-            rpa.wait_and_click (['btn_spooky_enter.png'])
-
-            if rpa.end_of_queue_state():
-                rpa.wait_and_click (['btn_spooky_130.png'])
-
-                if rpa.end_of_queue_state():
-                    rpa.wait_and_click (['btn_spooky_battle.png'])
-
-                    if rpa.end_of_queue_state():
-                        rpa.wait_and_click (['btn_spooky_auto.png'])
-
-                        rpa.press('f5')
-
-                        rpa.sleep(15)
-
 def open_game():
 
     import webbrowser
@@ -141,6 +115,16 @@ def login_abiaz():
 
     if rpa.end_of_queue_state():
         rpa.wait_and_click(['btn_login_abiaz.png'])
+
+        if rpa.end_of_queue_state():
+            rpa.wait_and_click(['btn_login_play.png'])
+
+def login_sonne():
+
+    rpa.wait_and_click(['btn_login_email.png'])
+
+    if rpa.end_of_queue_state():
+        rpa.wait_and_click(['btn_login_sonne.png'])
 
         if rpa.end_of_queue_state():
             rpa.wait_and_click(['btn_login_play.png'])
