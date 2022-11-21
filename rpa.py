@@ -332,7 +332,7 @@ def arena():
     rpa.save_queue('start_loop')
 
     while rpa.end_of_queue_state():
-        rpa.wait_and_click(['btn_kattegat.png','btn_kattegat2.png','btn_arena_skoll.png','btn_libertalia.png','btn_nullplan.png'])
+        rpa.wait_and_click(['btn_arena_crow.png','btn_kattegat.png','btn_kattegat2.png','btn_arena_skoll.png','btn_libertalia.png','btn_nullplan.png'])
 
         if rpa.end_of_queue_state():
             rpa.press('esc')
