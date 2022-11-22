@@ -327,7 +327,7 @@ def arena():
     Step: 1st fight in arena
     ----------------------------------------------------------------------
     """
-    rpa.wait_and_click(['btn_arena.png', 'btn_arena2.png','btn_arena3.png'])
+    rpa.wait_and_click(['btn_arena.png', 'btn_arena2.png','btn_arena3.png', 'btn_arena4.png'])
 
     rpa.save_queue('start_loop')
 
