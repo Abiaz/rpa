@@ -180,7 +180,7 @@ def server_44():
     Step: Change to Server 44
     ----------------------------------------------------------------------
     """
-    rpa.wait_and_click(['btn_server.png'])
+    rpa.wait_and_click(['btn_server.png','btn_server2.png'])
 
     if rpa.end_of_queue_state():
         rpa.wait_and_click(['btn_server_change.png'], confidence=0.9)
@@ -204,7 +204,7 @@ def server_51():
     Step: Change to Server 51
     ----------------------------------------------------------------------
     """
-    rpa.wait_and_click(['btn_server.png'])
+    rpa.wait_and_click(['btn_server.png','btn_server2.png'])
 
     if rpa.end_of_queue_state():
         rpa.wait_and_click(['btn_server_change.png'], confidence=0.9)
@@ -226,7 +226,7 @@ def server_90():
     Step: Change to Server 90
     ----------------------------------------------------------------------
     """
-    rpa.wait_and_click(['btn_server.png'])
+    rpa.wait_and_click(['btn_server.png','btn_server2.png'])
 
     if rpa.end_of_queue_state():
         rpa.wait_and_click(['btn_server_change.png'], confidence=0.9)
