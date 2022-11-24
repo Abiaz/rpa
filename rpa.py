@@ -292,7 +292,7 @@ def airship():
     Step: get all airship tasks
     ----------------------------------------------------------------------
     """
-    rpa.wait_and_click(['btn_airship.png', 'btn_airship2.png','btn_airship3.png'],confidence=0.9)
+    rpa.wait_and_click(['btn_airship.png', 'btn_airship2.png','btn_airship3.png','btn_airship4.png'],confidence=0.9)
 
     if rpa.end_of_queue_state():
         rpa.wait_and_click(['gift_valkyrie.png'])
