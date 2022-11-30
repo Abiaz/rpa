@@ -327,29 +327,35 @@ def arena():
     Step: 1st fight in arena
     ----------------------------------------------------------------------
     """
+    counter = 0
+    max_counter = 10
+
     rpa.wait_and_click(['btn_arena.png', 'btn_arena2.png','btn_arena3.png', 'btn_arena4.png'])
 
     rpa.save_queue('start_loop')
 
-    while rpa.end_of_queue_state():
+    while rpa.end_of_queue_state() and counter < max_counter:
         rpa.wait_and_click(['btn_arena_crow.png','btn_kattegat.png','btn_kattegat2.png','btn_arena_skoll.png','btn_libertalia.png','btn_nullplan.png'])
 
         if rpa.end_of_queue_state():
             rpa.press('esc')
             rpa.wait_and_click(['btn_arena_refresh.png'])
+            counter += 1
 
             rpa.restore_queue('start_loop')
 
-    rpa.wait_and_click(['btn_arena_attack.png'])
+    while counter < max_counter:
 
-    if rpa.end_of_queue_state():
-        rpa.wait_and_click(['btn_arena_battle.png'])
+        rpa.wait_and_click(['btn_arena_attack.png'])
 
         if rpa.end_of_queue_state():
-            rpa.wait_and_click(['btn_arena_pause.png'], max_wait=20)
+            rpa.wait_and_click(['btn_arena_battle.png'])
 
             if rpa.end_of_queue_state():
-                rpa.wait_and_click(['btn_arena_skip_battle.png'])
+                rpa.wait_and_click(['btn_arena_pause.png'], max_wait=20)
+
+                if rpa.end_of_queue_state():
+                    rpa.wait_and_click(['btn_arena_skip_battle.png'])
             
     rpa.press('esc', presses=5, interval=0.5)
 
