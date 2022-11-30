@@ -344,7 +344,7 @@ def arena():
 
             rpa.restore_queue('start_loop')
 
-    while counter < max_counter:
+    if counter < max_counter:
 
         rpa.wait_and_click(['btn_arena_attack.png'])
 
