@@ -25,7 +25,7 @@ logger = logging.getLogger(__name__)
 
 def heroic_mission():
 
-    rpa.wait_and_click (['btn_heroic_mission_campaign.png'])
+    rpa.wait_and_click (['btn_heroic_mission_campaign.png','btn_heroic_mission_campaign2.png'])
 
     rpa.save_queue('start_loop')
 
@@ -330,7 +330,7 @@ def arena():
     counter = 0
     max_counter = 10
 
-    rpa.wait_and_click(['btn_arena.png', 'btn_arena2.png','btn_arena3.png', 'btn_arena4.png'])
+    rpa.wait_and_click(['btn_arena.png', 'btn_arena2.png','btn_arena3.png', 'btn_arena4.png','btn_arena5.png'])
 
     rpa.save_queue('start_loop')
 
