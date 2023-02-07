@@ -367,28 +367,24 @@ def arena2():
     """
     rpa.wait_and_click(['btn_arena.png'])
 
-    rpa.save_queue('start_loop')
-
-    while rpa.end_of_queue_state():
-        rpa.wait_and_click(['btn_kattegat.png','btn_kattegat2.png','btn_arena_skoll.png','btn_libertalia.png','btn_nullplan.png'])
-
-        if rpa.end_of_queue_state():
-            rpa.press('esc')
-            rpa.wait_and_click(['btn_arena_refresh.png'])
-
-            rpa.restore_queue('start_loop')
-
-    rpa.wait_and_click(['btn_arena_attack.png'])
-
-    if rpa.end_of_queue_state():
-        rpa.wait_and_click(['btn_arena_battle.png'])
-
-        if rpa.end_of_queue_state():
-            rpa.wait_and_click(['btn_arena_pause.png'], max_wait=20)
+    for i in range(10):
+        if rpa.image_found('C:/Users/Torsten Rahmann/rpa/tmp/btn_kattegat.png'):
+            pyautogui.click(['btn_arena_refresh.png'])
+            break
+        else:
+            rpa.wait_and_click(['btn_arena_attack.png'])
 
             if rpa.end_of_queue_state():
-                rpa.wait_and_click(['btn_arena_skip_battle.png'])
-            
+                rpa.wait_and_click(['btn_arena_battle.png'])
+
+                if rpa.end_of_queue_state():
+                    rpa.wait_and_click(['btn_arena_pause.png'], max_wait=20)
+
+                    if rpa.end_of_queue_state():
+                        rpa.wait_and_click(['btn_arena_skip_battle.png'])
+        pass
+
+             
     rpa.press('esc', presses=5, interval=0.5)
 
 def grand_arena():

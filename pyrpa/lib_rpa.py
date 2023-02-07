@@ -105,7 +105,6 @@ def load_image(image_path):
 
     return image
 
-
 def resize_image(image, scale):
     """ resize image according to scale """
     resized = imutils.resize(image, width=int(image.shape[1] * scale))
@@ -225,7 +224,6 @@ def wait_and_click(image_paths, confidence=0.8, max_wait=None, sleep=1, scale=No
 
     return point
 
-
 """ old code, can be phased out """
 def find_scaled_image(image_path, confidence=0.8, tries=1, sleep=1, fixed_scale=None):
     positions = None
@@ -341,6 +339,9 @@ class Robotic_Process_Automation():
 
     def restore_queue(self, label):
         restore_queue(label)
+
+    def image_found(image_paths, confidence=0.8):
+        return image_found(image_paths, confidence)
     
 if __name__ == "__main__":
     """ setup logging capabilities """
