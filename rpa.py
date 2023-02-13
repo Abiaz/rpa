@@ -139,6 +139,16 @@ def login_luiz():
         if rpa.end_of_queue_state():
             rpa.wait_and_click(['btn_login_play.png'])
 
+def login_mike():
+
+    rpa.wait_and_click(['btn_login_email.png'])
+
+    if rpa.end_of_queue_state():
+        rpa.wait_and_click(['btn_login_w4rlord.png'])
+
+        if rpa.end_of_queue_state():
+            rpa.wait_and_click(['btn_login_play.png'])
+
 def login_floki():
 
     rpa.wait_and_click(['btn_login_email.png'])
