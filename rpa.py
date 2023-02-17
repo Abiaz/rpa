@@ -208,10 +208,10 @@ def server_44():
 
     
 
-def server_51():
+def server_50():
     """
     ----------------------------------------------------------------------
-    Step: Change to Server 51
+    Step: Change to Server 50
     ----------------------------------------------------------------------
     """
     rpa.wait_and_click(['btn_server.png','btn_server2.png'])
@@ -225,7 +225,7 @@ def server_51():
            rpa.wait_and_click(['btn_server_up.png'], max_wait=20)
 
            if rpa.end_of_queue_state():
-               rpa.wait_and_click(['btn_server_51.png'], max_wait=1)
+               rpa.wait_and_click(['btn_server_50.png'], max_wait=1)
                rpa.wait_and_click(['btn_server_select.png'])
 
         rpa.restore_queue('start_loop')       
