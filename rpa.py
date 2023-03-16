@@ -609,7 +609,7 @@ def tournament():
     rpa.wait_and_click(['btn_titan_valley.png'])
 
     if rpa.end_of_queue_state():
-        rpa.wait_and_click(['btn_tournament.png'])
+        rpa.wait_and_click(['btn_tournament.png'], confidence=0.7)
 
         rpa.save_queue('start_loop')
 
