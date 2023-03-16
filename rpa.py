@@ -235,7 +235,7 @@ def server_50():
            rpa.wait_and_click(['btn_server_up.png'], max_wait=20)
 
            if rpa.end_of_queue_state():
-               rpa.wait_and_click(['btn_server_50.png'], max_wait=1)
+               rpa.wait_and_click(['btn_server_50.png','btn_server_50_1.png'], max_wait=1)
                rpa.wait_and_click(['btn_server_select.png'])
 
         rpa.restore_queue('start_loop')       
