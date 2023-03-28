@@ -658,7 +658,7 @@ def altar():
 
         rpa.press('esc', presses=5, interval=0.5)
 
-def asgard():
+def asgard_old():
     """
     # ----------------------------------------------------------------------
     # Step: Asgard
@@ -737,7 +737,7 @@ def asgard():
     # after we finished all the steps
     rpa.press('esc', presses=3, interval=0.5)
 
-def asgard2():
+def asgard():
 
     rpa.wait_and_click(['btn_asgard.png'])
 
@@ -746,7 +746,7 @@ def asgard2():
     rpa.save_queue('start_loop')
 
     while rpa.end_of_queue_state():
-        rpa.wait_and_click(['btn_asgard_guild_raid_sk2.png', 'btn_asgard_guild_raid_sk3.png','btn_asgard_guild_raid_start.png','btn_asgard_guild_raid_next.png', 'btn_asgard_guild_raid_battle.png', 'btn_asgard_guild_raid_next2.png', 'btn_asgard_guild_raid_battle2.png','btn_asgard_guild_raid_battle_pause.png','btn_asgard_guild_raid_skip.png','btn_asgard_guild_raid_ok.png'])
+        rpa.wait_and_click(['btn_asgard_guild_raid_sk1.png','btn_asgard_guild_raid_sk2.png', 'btn_asgard_guild_raid_sk3.png','btn_asgard_guild_raid_start.png','btn_asgard_guild_raid_next.png', 'btn_asgard_guild_raid_battle.png', 'btn_asgard_guild_raid_next2.png', 'btn_asgard_guild_raid_battle2.png','btn_asgard_guild_raid_battle_pause.png','btn_asgard_guild_raid_skip.png','btn_asgard_guild_raid_ok.png'])
 
         rpa.save_queue('start_loop')
 
