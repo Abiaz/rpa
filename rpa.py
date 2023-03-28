@@ -8,8 +8,7 @@ Date        Author          Info
 -------------------------------------------------------------------------------
 2022.06.20  python-rpa-dev  Initial Version
 2022.06.29  python-rpa-dev  Set loglevel with environment variable RPA_LOGLEVEL
-                            see https://powerfulpython.com/blog/nifty-python-logging-trick/
-2022.06.29  python-rpa-dev  Add checksum so we can use versioning for data collection etc.
+                            see https://powerfulpython.com/blog/nifty-python-logging-trick/2022.06.29  python-rpa-dev  Add checksum so we can use versioning for data collection etc.
 
 """
 
@@ -747,7 +746,7 @@ def asgard2():
     rpa.save_queue('start_loop')
 
     while rpa.end_of_queue_state():
-        rpa.wait_and_click(['btn_asgard_guild_raid_sk2.png', 'btn_asgard_guild_raid_sk3.png'])
+        rpa.wait_and_click(['btn_asgard_guild_raid_sk2.png', 'btn_asgard_guild_raid_sk3.png','btn_asgard_guild_raid_start.png','btn_asgard_guild_raid_next.png', 'btn_asgard_guild_raid_battle.png', 'btn_asgard_guild_raid_next2.png', 'btn_guild_raid_battle2.png','btn_guild_raid_battle_final.png','btn_asgard_guild_raid_battle_pause.png','btn_asgard_guild_raid_skip.png','btn_asgard_guild_raid_ok.png'])
 
         while rpa.end_of_queue_state():
             rpa.wait_and_click(['btn_asgard_guild_raid_start.png'])
@@ -755,21 +754,7 @@ def asgard2():
             while rpa.end_of_queue_state():
                 rpa.wait_and_click(['btn_asgard_guild_raid_next.png', 'btn_asgard_guild_raid_battle.png', 'btn_asgard_guild_raid_next2.png'])
 
-            rpa.save_queue('start_fights')
-
-            while rpa.end_of_queue_state():
-                # wait for auto battle button
-                rpa.wait_for_image(['btn_battle_auto.png'], max_wait=15)
-
-                if rpa.end_of_queue_state():
-                    rpa.press('esc', presses=1)
-
-                    rpa.wait_and_click(['btn_asgard_guild_raid_skip.png'])
-
-                    while rpa.end_of_queue_state():
-                        rpa.wait_and_click(['btn_asgard_guild_raid_ok.png','btn_asgard_guild_raid_next2.png'])
-
-                    rpa.restore_queue('start_fights')
+            rpa.save_queue('start_loop')
 
     rpa.restore_queue('start_loop')
 
