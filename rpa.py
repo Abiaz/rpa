@@ -22,6 +22,11 @@ import argparse
 
 logger = logging.getLogger(__name__)
 
+def auto():
+
+    rpa.wait_and_click(['btn_asgard_guild_raid_sk1.png','btn_asgard_guild_raid_sk2.png','btn_asgard_guild_raid_sk3.png','btn_asgard_guild_raid_start.png','btn_asgard_guild_raid_next.png', 'btn_asgard_guild_raid_battle.png', 'btn_asgard_guild_raid_next2.png', 'btn_asgard_guild_raid_battle2.png','btn_asgard_guild_raid_auto.png','btn_asgard_guild_raid_skip.png','btn_asgard_guild_raid_ok.png'])
+
+
 def heroic_mission():
 
     rpa.wait_and_click (['btn_heroic_mission_campaign.png','btn_heroic_mission_campaign2.png'])
