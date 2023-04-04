@@ -746,7 +746,7 @@ def asgard():
     rpa.save_queue('start_loop')
 
     while rpa.end_of_queue_state():
-        rpa.wait_and_click(['btn_asgard_guild_raid_sk1.png','btn_asgard_guild_raid_sk2.png', 'btn_asgard_guild_raid_sk3.png','btn_asgard_guild_raid_start.png','btn_asgard_guild_raid_next.png', 'btn_asgard_guild_raid_battle.png', 'btn_asgard_guild_raid_next2.png', 'btn_asgard_guild_raid_battle2.png','btn_asgard_guild_raid_battle_pause.png','btn_asgard_guild_raid_skip.png','btn_asgard_guild_raid_ok.png'])
+        rpa.wait_and_click(['btn_asgard_guild_raid_sk1.png','btn_asgard_guild_raid_sk2.png', 'btn_asgard_guild_raid_sk3.png','btn_asgard_guild_raid_start.png','btn_asgard_guild_raid_next.png', 'btn_asgard_guild_raid_battle.png', 'btn_asgard_guild_raid_next2.png', 'btn_asgard_guild_raid_battle2.png','btn_asgard_guild_raid_battle_pause.png','btn_asgard_guild_raid_battle_pause2.png','btn_asgard_guild_raid_battle_auto.png','btn_asgard_guild_raid_skip.png','btn_asgard_guild_raid_ok.png'])
 
         rpa.save_queue('start_loop')
 
