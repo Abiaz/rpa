@@ -196,7 +196,7 @@ def wait_for_image(image_paths, confidence=0.8, max_wait=None, sleep=1, scale=No
 
 
 
-def wait_and_click(image_paths, confidence=0.8, max_wait=None, sleep=1, scale=None):
+def wait_and_click(image_paths, confidence=0.7, max_wait=None, sleep=1, scale=None):
     """ 
     find any image and click it
      - set scale to default value if empty
@@ -313,7 +313,7 @@ class Robotic_Process_Automation():
 
         init_queue()
 
-    def press(sefl, keys, presses=1, interval=0.0):
+    def press(self, keys, presses=1, interval=0.0):
         """ send pressed keys to gui """
         pyautogui.press(keys=keys, presses=presses, interval=interval)
 
@@ -327,6 +327,15 @@ class Robotic_Process_Automation():
          - set max wait time to default value if empty
         """
         return wait_and_click(image_paths, confidence, max_wait, sleep, scale)
+
+    def mouse():
+
+        pyautogui.moveTo(500,500,2)
+
+    def close_window():
+
+        pyautogui.move(4500,-4500,2)
+        pyautogui.click()
 
     def sleep(self, wait):
         time.sleep(wait)

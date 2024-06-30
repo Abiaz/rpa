@@ -29,7 +29,7 @@ def auto():
 
 def heroic_mission():
 
-    rpa.wait_and_click (['btn_heroic_mission_campaign.png','btn_heroic_mission_campaign2.png'])
+    rpa.wait_and_click (['btn_heroic_mission_campaign3.png'])
 
     rpa.save_queue('start_loop')
 
@@ -101,14 +101,23 @@ def open_game():
     import webbrowser
     url = 'https://www.hero-wars.com/?hl=en'
     webbrowser.open_new(url)
-    rpa.sleep(15)    
+    rpa.sleep(15)
+    rpa.wait_and_click(['btn_start_game.png'])
+    rpa.wait_and_click(['btn_login_cookies4.png','btn_login_cookies.png','btn_login_cookies2.png','btn_login_cookies3.png'])
+
+def close_window():
+
+    rpa.close_window ()
 
 def logout():
 
     rpa.wait_and_click(['btn_logout_menu.png'], confidence=0.7)
 
     if rpa.end_of_queue_state():
-        rpa.wait_and_click(['btn_login_logout.png'])
+        rpa.press ('tab', presses=20, interval= 0.1)
+
+        if rpa.end_of_queue_state():
+            rpa.wait_and_click(['btn_login_logout.png','btn_logout_logout2.png'])
 
         rpa.sleep(10)
     
@@ -118,7 +127,7 @@ def login_abiaz():
     rpa.wait_and_click(['btn_login_email.png'])
 
     if rpa.end_of_queue_state():
-        rpa.wait_and_click(['btn_login_abiaz.png'])
+        rpa.wait_and_click(['btn_login_abiaz.png','btn_login_abiaz2.png'])
 
         if rpa.end_of_queue_state():
             rpa.wait_and_click(['btn_login_play.png'])
@@ -128,7 +137,7 @@ def login_sonne():
     rpa.wait_and_click(['btn_login_email.png'])
 
     if rpa.end_of_queue_state():
-        rpa.wait_and_click(['btn_login_sonne.png'])
+        rpa.wait_and_click(['btn_login_sonne.png','btn_login_sonne2.png'])
 
         if rpa.end_of_queue_state():
             rpa.wait_and_click(['btn_login_play.png'])
@@ -138,7 +147,7 @@ def login_agr():
     rpa.wait_and_click(['btn_login_email.png'])
 
     if rpa.end_of_queue_state():
-        rpa.wait_and_click(['btn_login_agr.png'])
+        rpa.wait_and_click(['btn_login_agr.png','btn_login_agr2.png'])
 
         if rpa.end_of_queue_state():
             rpa.wait_and_click(['btn_login_play.png'])
@@ -153,12 +162,12 @@ def login_luiz():
         if rpa.end_of_queue_state():
             rpa.wait_and_click(['btn_login_play.png'])
 
-def login_mike():
+def login_marc():
 
     rpa.wait_and_click(['btn_login_email.png'])
 
     if rpa.end_of_queue_state():
-        rpa.wait_and_click(['btn_login_w4rlord.png'])
+        rpa.wait_and_click(['btn_login_marc.png'])
 
         if rpa.end_of_queue_state():
             rpa.wait_and_click(['btn_login_play.png'])
@@ -168,7 +177,7 @@ def login_floki():
     rpa.wait_and_click(['btn_login_email.png'])
 
     if rpa.end_of_queue_state():
-        rpa.wait_and_click(['btn_login_floki.png'])
+        rpa.wait_and_click(['btn_login_floki.png','btn_login_floki2.png'])
 
         if rpa.end_of_queue_state():
             rpa.wait_and_click(['btn_login_play.png'])
@@ -178,7 +187,7 @@ def login_fearil():
     rpa.wait_and_click(['btn_login_email.png'])
 
     if rpa.end_of_queue_state():
-        rpa.wait_and_click(['btn_login_fearil.png'])
+        rpa.wait_and_click(['btn_login_fearil.png','btn_login_fearil2.png'])
 
         if rpa.end_of_queue_state():
             rpa.wait_and_click(['btn_login_play.png'])
@@ -194,9 +203,31 @@ def first_screen():
     img_pos, scale = find_and_click('logo_nexters.png', tries = 10, sleep = 2)
     # logger.info('image position %s', img_pos)
     """
-    rpa.wait_and_click(['logo_nexters.png'], max_wait=20)  # check for loading screen and ads
+    rpa.wait_and_click(['logo_nexters.png','logo_nexters2.png'], max_wait=20)  # check for loading screen and ads
     rpa.sleep(20)
     rpa.press('esc', presses=5, interval= 0.5)  # exit promotion screen
+
+def server_40():
+    """
+    ----------------------------------------------------------------------
+    Step: Change to Server 40
+    ----------------------------------------------------------------------
+    """
+    rpa.wait_and_click(['btn_server.png','btn_server2.png','btn_server3.png'])
+
+    if rpa.end_of_queue_state():
+        rpa.wait_and_click(['btn_server_change.png'], confidence=0.9)
+
+        rpa.save_queue('start_loop')
+
+        while rpa.end_of_queue_state():
+           rpa.wait_and_click(['btn_server_down.png','btn_server_down2.png'], max_wait=20)
+
+           if rpa.end_of_queue_state():
+               rpa.wait_and_click(['btn_server_40.png','btn_server_40_2.png'], max_wait=2)
+               rpa.wait_and_click(['btn_server_select.png'])
+
+        rpa.restore_queue('start_loop')
 
 def server_44():
     """
@@ -204,7 +235,7 @@ def server_44():
     Step: Change to Server 44
     ----------------------------------------------------------------------
     """
-    rpa.wait_and_click(['btn_server.png','btn_server2.png'])
+    rpa.wait_and_click(['btn_server.png','btn_server2.png','btn_server3.png'])
 
     if rpa.end_of_queue_state():
         rpa.wait_and_click(['btn_server_change.png'], confidence=0.9)
@@ -215,7 +246,7 @@ def server_44():
            rpa.wait_and_click(['btn_server_down.png'], max_wait=20)
 
            if rpa.end_of_queue_state():
-               rpa.wait_and_click(['btn_server_44.png'], max_wait=1)
+               rpa.wait_and_click(['btn_server_44.png','btn_server_44_2.png'], max_wait=2)
                rpa.wait_and_click(['btn_server_select.png'])
 
         rpa.restore_queue('start_loop')
@@ -239,7 +270,7 @@ def server_50():
            rpa.wait_and_click(['btn_server_up.png'], max_wait=20)
 
            if rpa.end_of_queue_state():
-               rpa.wait_and_click(['btn_server_50.png','btn_server_50_1.png'], confidence=0.7, max_wait=5)
+               rpa.wait_and_click(['btn_server_50.png','btn_server_50_1.png','btn_server_50_3.png'], confidence=0.7, max_wait=5)
                rpa.wait_and_click(['btn_server_select.png'])
 
         rpa.restore_queue('start_loop')       
@@ -281,6 +312,19 @@ def daily_bonus():
 
     rpa.press('esc', presses=5, interval=0.5)
 
+def soul_atrium():
+    """
+    ----------------------------------------------------------------------
+    Step: get daily soul crystal
+    ----------------------------------------------------------------------
+    """
+    rpa.wait_and_click(['btn_soul_atrium.png'])
+
+    if rpa.end_of_queue_state():
+        rpa.wait_and_click(['btn_soul_atrium_claim.png'], max_wait=25)
+
+    rpa.press('esc', presses=5, interval=0.5)
+
 def chest():
     """
     ----------------------------------------------------------------------
@@ -316,7 +360,7 @@ def airship():
     Step: get all airship tasks
     ----------------------------------------------------------------------
     """
-    rpa.wait_and_click(['btn_airship.png', 'btn_airship2.png','btn_airship3.png','btn_airship4.png','btn_airship5.png'],confidence=0.9)
+    rpa.wait_and_click(['btn_airship7.png','btn_airship6.png','btn_airship.png', 'btn_airship2.png','btn_airship3.png','btn_airship4.png','btn_airship5.png'],confidence=0.9)
 
     if rpa.end_of_queue_state():
         rpa.wait_and_click(['gift_valkyrie.png'])
@@ -324,7 +368,7 @@ def airship():
         if rpa.end_of_queue_state():
             rpa.press('esc', presses=1)
 
-        rpa.wait_and_click(['btn_expeditions_rd.png'])
+        rpa.wait_and_click(['btn_expeditions_rd.png','btn_expeditions_rd2.png'])
 
         rpa.save_queue('start_loop')
 
@@ -332,11 +376,11 @@ def airship():
             rpa.wait_and_click(['btn_with_rd.png'])
 
             if rpa.end_of_queue_state():
-                rpa.wait_and_click(['btn_airship_start.png'])
+                rpa.wait_and_click(['btn_airship_start.png','btn_airship_collect.png'])
 
                 if rpa.end_of_queue_state():
                     rpa.wait_and_click(['btn_airship_auto.png'])
-                    rpa.wait_and_click(['btn_airship_start2.png'])
+                    rpa.wait_and_click(['btn_airship_start2.png','btn_airship_collect.png'])
 
                 # need to set queue state to start of loop
                 rpa.restore_queue('start_loop')
@@ -354,32 +398,35 @@ def arena():
     counter = 0
     max_counter = 10
 
-    rpa.wait_and_click(['btn_arena.png', 'btn_arena2.png','btn_arena3.png', 'btn_arena4.png','btn_arena5.png'])
+    rpa.wait_and_click(['btn_arena6.png','btn_arena.png', 'btn_arena2.png','btn_arena3.png', 'btn_arena4.png','btn_arena5.png'])
 
     rpa.save_queue('start_loop')
 
     while rpa.end_of_queue_state() and counter < max_counter:
-        rpa.wait_and_click(['btn_arena_crow.png','btn_kattegat.png','btn_kattegat2.png','btn_arena_skoll.png','btn_libertalia.png','btn_nullplan.png'])
+        rpa.wait_and_click(['btn_kattegat.png','btn_kattegat2.png','btn_schweizer.png'])
 
         if rpa.end_of_queue_state():
+            rpa.sleep(2)
             rpa.press('esc')
             rpa.wait_and_click(['btn_arena_refresh.png'])
             counter += 1
+            if counter > max_counter:
+                rpa.press('esc', presses=5, interval=0.5)    
 
             rpa.restore_queue('start_loop')
 
-    if counter < max_counter:
+    rpa.wait_and_click(['btn_arena_attack.png'])
 
-        rpa.wait_and_click(['btn_arena_attack.png'])
+    if rpa.end_of_queue_state():
+        rpa.wait_and_click(['btn_arena_battle.png','btn_arena_battle2.png'])
 
         if rpa.end_of_queue_state():
-            rpa.wait_and_click(['btn_arena_battle.png'])
+            rpa.wait_and_click(['btn_arena_pause.png'], max_wait=20)
 
             if rpa.end_of_queue_state():
-                rpa.wait_and_click(['btn_arena_pause.png'], max_wait=20)
+                rpa.wait_and_click(['btn_arena_skip_battle.png'])
 
-                if rpa.end_of_queue_state():
-                    rpa.wait_and_click(['btn_arena_skip_battle.png'])
+    rpa.sleep(5) 
             
     rpa.press('esc', presses=5, interval=0.5)
 
@@ -417,6 +464,9 @@ def grand_arena():
     Step: 1 fight in grand arena
     ----------------------------------------------------------------------
     """
+    counter = 0
+    max_counter = 5
+
     rpa.wait_and_click(['btn_grand_arena.png'])
 
     if rpa.end_of_queue_state():
@@ -425,16 +475,16 @@ def grand_arena():
     rpa.save_queue('start_loop')
 
     while rpa.end_of_queue_state():
-        rpa.wait_and_click(['btn_kattegat.png','btn_kattegat2.png','btn_arena_skoll.png','btn_libertalia.png','btn_nullplan.png'])
+        rpa.wait_and_click(['btn_schweizer.png','btn_kattegat.png','btn_kattegat2.png','btn_arena_skoll.png','btn_libertalia.png','btn_nullplan.png'])
 
         if rpa.end_of_queue_state():
             rpa.press('esc')
             rpa.wait_and_click(['btn_grand_arena_refresh.png'])
+            counter += 1
+            if counter > max_counter:
+                rpa.press ('esc', presses=5, interval=0.5)    
 
             rpa.restore_queue('start_loop')
-
-    
-    
 
     rpa.wait_and_click(['btn_grand_arena_attack.png'])
 
@@ -448,10 +498,10 @@ def grand_arena():
                 rpa.wait_and_click(['btn_grand_arena_battle2.png'])
 
                 if rpa.end_of_queue_state():
-                     rpa.wait_and_click(['btn_grand_arena_pause.png'], max_wait=20)
+                    rpa.wait_and_click(['btn_grand_arena_pause.png'], max_wait=20)
 
-                     if rpa.end_of_queue_state():
-                         rpa.wait_and_click(['btn_grand_arena_skip.png'])
+                    if rpa.end_of_queue_state():
+                        rpa.wait_and_click(['btn_grand_arena_skip.png'])
 
     rpa.press('esc', presses=5, interval=0.5)
        
@@ -479,7 +529,7 @@ def outland():
     ----------------------------------------------------------------------
     Step: get all outland challenges
     """
-    rpa.wait_and_click(['btn_outland.png'])
+    rpa.wait_and_click(['btn_outland.png','btn_outland2.png'])
 
     rpa.save_queue('start_loop')
 
@@ -522,12 +572,12 @@ def tower():
     ----------------------------------------------------------------------
     Step: get all tower chests (without emeralds)
     """
-    rpa.wait_and_click(['btn_tower.png','btn_tower2.png'])
+    rpa.wait_and_click(['btn_tower.png','btn_tower2.png','btn_tower3.png'])
 
     rpa.save_queue('start_loop')
 
     if rpa.end_of_queue_state():
-        rpa.wait_and_click(['btn_tower_instclear.png'])
+        rpa.wait_and_click(['btn_tower_instclear.png','btn_tower_instclear2.png'])
 
         if rpa.end_of_queue_state():
            rpa.wait_and_click(['btn_tower_ch_chests.png'])
@@ -597,7 +647,7 @@ def divination_cards():
         rpa.wait_and_click(['btn_dungeon_portal.png'])
 
         while rpa.end_of_queue_state():
-                rpa.wait_and_click(['btn_divination_battle.png','btn_divination_attack.png','btn_divination_fate.png','btn_divination_savepoint.png','btn_divination_collect.png'], max_wait=15)
+                rpa.wait_and_click(['btn_divination_battle.png','btn_divination_battle2.png','btn_divination_battle3.png','btn_divination_attack.png','btn_divination_fate.png','btn_divination_fate2.png','btn_divination_savepoint.png','btn_divination_savepoint2.png','btn_divination_collect.png'], max_wait=15)
 
         rpa.press('esc', presses=6, interval=0.5)
 
@@ -613,7 +663,7 @@ def tournament():
     rpa.wait_and_click(['btn_titan_valley.png'])
 
     if rpa.end_of_queue_state():
-        rpa.wait_and_click(['btn_tournament.png'], confidence=0.7)
+        rpa.wait_and_click(['btn_tournament.png','btn_tournament2.png'], confidence=0.7)
 
         rpa.save_queue('start_loop')
 
@@ -653,7 +703,7 @@ def altar():
     rpa.wait_and_click(['btn_titan_valley.png'])
 
     if rpa.end_of_queue_state():
-        rpa.wait_and_click(['btn_altar.png'])
+        rpa.wait_and_click(['btn_altar.png','btn_altar2.png'])
 
         if rpa.end_of_queue_state():
             rpa.wait_and_click(['btn_altar_sphere.png'])
@@ -662,6 +712,23 @@ def altar():
                 rpa.wait_and_click(['btn_altar_exit.png'])
 
         rpa.press('esc', presses=5, interval=0.5)
+
+def astral_seer ():
+
+    rpa.wait_and_click(['btn_asgard.png'])
+
+    if rpa.end_of_queue_state():
+        # Substep: Cradle of the Stars
+
+        rpa.wait_and_click(['btn_asgard_seer.png'])
+
+        if rpa.end_of_queue_state():
+            rpa.wait_and_click(['btn_asgard_seer_open.png'])
+
+            if rpa.end_of_queue_state():
+                rpa.wait_and_click(['btn_outland_exit.png'])
+
+            rpa.press('esc', presses=5, interval=0.5)
 
 def asgard_old():
     """
@@ -682,7 +749,7 @@ def asgard_old():
             if rpa.end_of_queue_state():
                 rpa.wait_and_click(['btn_outland_exit.png'])
 
-            rpa.press('esc', presses=1)
+            rpa.press('esc', presses=5, interval=0.5)
 
     # Substep: Guild Raid
 
@@ -746,12 +813,12 @@ def asgard():
 
     rpa.wait_and_click(['btn_asgard.png'])
 
-    rpa.wait_and_click(['btn_asgard_guild_raid.png'])
+    rpa.wait_and_click(['btn_asgard_guild_raid.png','btn_asgard_guild_raid2.png'])
 
     rpa.save_queue('start_loop')
 
     while rpa.end_of_queue_state():
-        rpa.wait_and_click(['btn_asgard_guild_raid_sk1.png','btn_asgard_guild_raid_sk2.png', 'btn_asgard_guild_raid_sk3.png','btn_asgard_guild_raid_start.png','btn_asgard_guild_raid_next.png', 'btn_asgard_guild_raid_battle.png', 'btn_asgard_guild_raid_next2.png', 'btn_asgard_guild_raid_battle2.png','btn_asgard_guild_raid_battle_pause.png','btn_asgard_guild_raid_pause2.png','btn_asgard_guild_raid_auto.png','btn_asgard_guild_raid_skip.png','btn_asgard_guild_raid_ok.png'])
+        rpa.wait_and_click(['btn_asgard_guild_raid_pause2.png','btn_asgard_guild_raid_sk1.png','btn_asgard_guild_raid_sk2.png', 'btn_asgard_guild_raid_sk3.png','btn_asgard_guild_raid_start.png','btn_asgard_guild_raid_next.png', 'btn_asgard_guild_raid_battle.png', 'btn_asgard_guild_raid_next2.png', 'btn_asgard_guild_raid_battle2.png','btn_asgard_guild_raid_battle_pause.png','btn_asgard_guild_raid_skip.png','btn_asgard_guild_raid_skip2.png','btn_asgard_guild_raid_auto.png','btn_asgard_guild_raid_ok.png'], confidence=0.8)
 
         rpa.save_queue('start_loop')
 
@@ -765,11 +832,11 @@ def switch_to_guild():
     Step: switch to guild plane
     ----------------------------------------------------------------------
     """
-    rpa.wait_and_click(['btn_guild.png'])
+    rpa.wait_and_click(['btn_guild.png','btn_guild2.png'])
 
     # wait until  new plane is displayed
     if rpa.end_of_queue_state():
-        rpa.wait_for_image(['btn_to_city.png'], max_wait=30)
+        rpa.wait_for_image(['btn_to_city.png','btn_to_city2.png'], max_wait=30)
 
 
 def switch_to_city():
@@ -778,11 +845,11 @@ def switch_to_city():
     Step: switch to city plane
     ----------------------------------------------------------------------
     """
-    rpa.wait_and_click(['btn_to_city.png'])
+    rpa.wait_and_click(['btn_to_city.png','btn_to_city2.png'])
 
     # wait until  new plane is displayed
     if rpa.end_of_queue_state():
-        rpa.wait_for_image(['btn_guild.png'], max_wait=30)
+        rpa.wait_for_image(['btn_guild.png','btn_guild2.png'], max_wait=30)
 
 
 class CustomLogRecord(logging.LogRecord):
