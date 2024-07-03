@@ -29,19 +29,20 @@ def auto():
 
 def heroic_mission():
 
-    rpa.wait_and_click (['btn_heroic_mission_campaign3.png'])
+    rpa.wait_and_click (['btn_heroic_mission_campaign3.png','btn_heroic_mission_campaign3.png','btn_heroic_mission_kampagne.png'])
 
     rpa.save_queue('start_loop')
 
     while rpa.end_of_queue_state():
-        rpa.wait_and_click(['btn_heroic_mission_left.png'])
+        rpa.wait_and_click(['btn_heroic_mission_left.png','btn_heroic_mission_left2.png','btn_heroic_mission_left3.png'], confidence=0.7)
 
         if rpa.end_of_queue_state():
-            rpa.wait_and_click(['btn_heroic_mission_aurora.png'], max_wait=2)
-               
+            rpa.wait_and_click(['btn_heroic_mission_aurora.png'], max_wait=3)
+            rpa.wait_and_click(['btn_heroic_mission_mouse.png'], max_wait=3)
+                           
             rpa.restore_queue('start_loop')
 
-    rpa.wait_and_click (['btn_heroic_mission_x3.png'])
+    rpa.wait_and_click (['btn_heroic_mission_x3.png'], confidence=0.9)
 
     rpa.press('esc', presses=5, interval= 0.5)
 
@@ -102,6 +103,7 @@ def open_game():
     url = 'https://www.hero-wars.com/?hl=en'
     webbrowser.open_new(url)
     rpa.sleep(15)
+    rpa.press ('f11')
     rpa.wait_and_click(['btn_start_game.png'])
     rpa.wait_and_click(['btn_login_cookies4.png','btn_login_cookies.png','btn_login_cookies2.png','btn_login_cookies3.png'])
 
@@ -111,13 +113,21 @@ def close_window():
 
 def logout():
 
+    rpa.sleep(15)
+
+    rpa.wait_and_click(['btn_logout_cancel.png'])
+    
+    rpa.press ('esc', presses=10, interval=0.1)
+
+    rpa.sleep (10)
+
     rpa.wait_and_click(['btn_logout_menu.png'], confidence=0.7)
 
     if rpa.end_of_queue_state():
-        rpa.press ('tab', presses=20, interval= 0.1)
+        rpa.press ('tab', presses=21, interval= 0.1)
 
         if rpa.end_of_queue_state():
-            rpa.wait_and_click(['btn_login_logout.png','btn_logout_logout2.png'])
+            rpa.wait_and_click(['btn_login_logout.png','btn_logout_logout2.png','btn_logout_abmelden.png'])
 
         rpa.sleep(10)
     
@@ -130,7 +140,28 @@ def login_abiaz():
         rpa.wait_and_click(['btn_login_abiaz.png','btn_login_abiaz2.png'])
 
         if rpa.end_of_queue_state():
-            rpa.wait_and_click(['btn_login_play.png'])
+            rpa.wait_and_click(['btn_login_play.png','btn_login_jetztspielen.png'])
+
+    rpa.sleep(25)
+    rpa.wait_and_click(['btn_logout_cancel.png'])
+    rpa.press('esc', presses=5, interval= 0.5)
+    rpa.wait_and_click(['btn_server.png','btn_server2.png','btn_server3.png'])
+
+    if rpa.end_of_queue_state():
+        rpa.wait_and_click(['btn_server_change.png'], confidence=0.9)
+
+        if rpa.end_of_queue_state():
+            rpa.wait_and_click(['btn_server_40.png'], confidence=0.9)
+
+            if rpa.end_of_queue_state():
+                rpa.wait_and_click(['btn_server_select.png'], confidence=0.9)
+
+    rpa.sleep(25)
+    rpa.press('f5')
+    rpa.sleep(25)
+
+        
+    
 
 def login_sonne():
 
@@ -140,7 +171,7 @@ def login_sonne():
         rpa.wait_and_click(['btn_login_sonne.png','btn_login_sonne2.png'])
 
         if rpa.end_of_queue_state():
-            rpa.wait_and_click(['btn_login_play.png'])
+            rpa.wait_and_click(['btn_login_play.png','btn_login_jetztspielen.png'])
 
 def login_agr():
 
@@ -150,17 +181,69 @@ def login_agr():
         rpa.wait_and_click(['btn_login_agr.png','btn_login_agr2.png'])
 
         if rpa.end_of_queue_state():
-            rpa.wait_and_click(['btn_login_play.png'])
+            rpa.wait_and_click(['btn_login_play.png','btn_login_jetztspielen.png'])
 
-def login_luiz():
+    rpa.sleep(25)
+
+def login_claudi():
 
     rpa.wait_and_click(['btn_login_email.png'])
 
     if rpa.end_of_queue_state():
-        rpa.wait_and_click(['btn_login_luiz.png'])
+        rpa.wait_and_click(['btn_login_claudi.png'])
 
         if rpa.end_of_queue_state():
-            rpa.wait_and_click(['btn_login_play.png'])
+            rpa.wait_and_click(['btn_login_play.png','btn_login_jetztspielen.png'])
+
+    rpa.sleep(25)
+
+def login_jens():
+
+    rpa.wait_and_click(['btn_login_email.png'])
+
+    if rpa.end_of_queue_state():
+        rpa.wait_and_click(['btn_login_jens.png'])
+
+        if rpa.end_of_queue_state():
+            rpa.wait_and_click(['btn_login_play.png','btn_login_jetztspielen.png'])
+
+    rpa.sleep(25)
+
+def login_stivio():
+
+    rpa.wait_and_click(['btn_login_email.png'])
+
+    if rpa.end_of_queue_state():
+        rpa.wait_and_click(['btn_login_stivio.png'])
+
+        if rpa.end_of_queue_state():
+            rpa.wait_and_click(['btn_login_play.png','btn_login_jetztspielen.png'])
+
+    rpa.sleep(25)
+
+def login_hathor():
+
+    rpa.wait_and_click(['btn_login_email.png'])
+
+    if rpa.end_of_queue_state():
+        rpa.wait_and_click(['btn_login_hathor.png'])
+
+        if rpa.end_of_queue_state():
+            rpa.wait_and_click(['btn_login_play.png','btn_login_jetztspielen.png'])
+
+    rpa.sleep(25)
+
+def login_moonchild():
+
+    rpa.wait_and_click(['btn_login_email.png'])
+
+    if rpa.end_of_queue_state():
+        rpa.wait_and_click(['btn_login_moonchild.png'])
+
+        if rpa.end_of_queue_state():
+            rpa.wait_and_click(['btn_login_play.png','btn_login_jetztspielen.png'])
+
+    rpa.sleep(25)
 
 def login_marc():
 
@@ -180,17 +263,41 @@ def login_floki():
         rpa.wait_and_click(['btn_login_floki.png','btn_login_floki2.png'])
 
         if rpa.end_of_queue_state():
-            rpa.wait_and_click(['btn_login_play.png'])
+           rpa.wait_and_click(['btn_login_play.png','btn_login_jetztspielen.png'])
 
-def login_fearil():
+    rpa.sleep(25)
+
+def login_schwadi():
 
     rpa.wait_and_click(['btn_login_email.png'])
 
     if rpa.end_of_queue_state():
-        rpa.wait_and_click(['btn_login_fearil.png','btn_login_fearil2.png'])
+        rpa.wait_and_click(['btn_login_schwadi.png'])
 
         if rpa.end_of_queue_state():
-            rpa.wait_and_click(['btn_login_play.png'])
+            rpa.wait_and_click(['btn_login_play.png','btn_login_jetztspielen.png'])
+
+    rpa.sleep(25)
+
+def hwh():
+
+    rpa.sleep(25)
+    rpa.wait_and_click(['btn_hwh_doit.png'])
+    rpa.sleep(5)
+    rpa.press('esc', presses=5, interval= 0.5)
+    rpa.wait_and_click(['btn_hwh_actions.png'], confidence=0.9)
+    rpa.wait_and_click(['btn_hwh_minions.png'], confidence=0.9)
+    rpa.wait_and_click(['btn_hwh_run.png'], confidence=0.9)
+    rpa.sleep(15)
+    rpa.wait_and_click(['btn_hwh_doall.png'], confidence=0.9)
+    rpa.wait_and_click(['btn_hwh_go.png'], confidence=0.9)
+    rpa.wait_and_click(['btn_hwh_ignore.png'])
+    rpa.wait_and_click(['btn_hwh_ignore.png'])
+    rpa.wait_and_click(['btn_hwh_no.png'])
+    rpa.wait_and_click(['btn_hwh_ok.png'], max_wait=300)
+    rpa.sleep(25)
+    
+    
 
 def first_screen():
     """
@@ -240,16 +347,13 @@ def server_44():
     if rpa.end_of_queue_state():
         rpa.wait_and_click(['btn_server_change.png'], confidence=0.9)
 
-        rpa.save_queue('start_loop')
+        if rpa.end_of_queue_state():
+            rpa.wait_and_click(['btn_server_44.png'], confidence=0.9)
 
-        while rpa.end_of_queue_state():
-           rpa.wait_and_click(['btn_server_down.png'], max_wait=20)
+            if rpa.end_of_queue_state():
+                rpa.wait_and_click(['btn_server_select.png'], confidence=0.9)
 
-           if rpa.end_of_queue_state():
-               rpa.wait_and_click(['btn_server_44.png','btn_server_44_2.png'], max_wait=2)
-               rpa.wait_and_click(['btn_server_select.png'])
-
-        rpa.restore_queue('start_loop')
+    
 
     
 

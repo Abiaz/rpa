@@ -18,6 +18,7 @@ import pyautogui
 pyautogui.FAILSAFE = False
 import imutils
 import time
+import pyscreeze
 
 
 
@@ -115,6 +116,8 @@ def resize_image(image, scale):
 def locate_image(image, confidence=0.8):
     """ locate image on screen """
     positions = None
+    pyscreeze.USE_IMAGE_NOT_FOUND_EXCEPTION = False
+    
 
     # using cv2 to identify image
     imglocation = pyautogui.locateAllOnScreen(image, grayscale=False, confidence=confidence)
